@@ -1,0 +1,15 @@
+def estrictamenteCreciente(arreglo_enteros):
+
+    Args:
+        arreglo_enteros: Una lista de enteros.
+    if not arreglo_enteros or len(arreglo_enteros) <= 1:
+        return 0
+
+    rupturas = 0
+    for i in range(1, len(arreglo_enteros)):
+        # Si el elemento actual no es estrictamente mayor que el anterior,
+        # significa que se rompe el orden.
+        if arreglo_enteros[i] <= arreglo_enteros[i - 1]:
+            rupturas += 1
+            
+    return rupturas
